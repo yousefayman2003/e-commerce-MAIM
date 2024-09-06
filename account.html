@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>E-commerce PhotoSchool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body id="main-content" class="hidden">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/photos/logo.png" alt="" width="125px">
+                </a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li style="position: relative;">
+                        <a href="cart.html">Cart</a>
+                        <span id="cart-count" class="cart-count">0</span>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+
+
+            <img src="photos/menu.png"  alt="" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+
+
+
+    <div class="account-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="/photos/leica.png" alt="">
+                </div>
+                <div class="col-2">
+                    <div class="account-container">
+                        <div class="account-btn">
+                            <span onclick="login()">Login</span>
+                            <span onclick="register()">Sign up</span>
+                            <hr id="Indicator">
+                        </div>
+                        <form id="LoginForm">
+                            <input id="loginUsername" type="text" placeholder="Username">
+                            <input id="loginPassword" type="password" placeholder="Password">
+                            <button type="submit" class="btn">Login</button>
+                            <a href="">Forgot Password</a>
+                        </form>
+                        <form id="RegForm">
+                            <input id="regUsername" type="text" placeholder="Username">
+                            <input id="regEmail" type="email" placeholder="Email">
+                            <input id="regPassword" type="password" placeholder="Password">
+                            <button type="submit" class="btn">Sign Up</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="back-to-top">
+        <svg aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
+        </svg>
+    </button>
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Contact Information</h3>
+                    <p>Email: company@example.com</p>
+                    <p>Phone: +123456789</p>
+                </div>
+                <div class="footer-col-2">
+                    <img src="/photos/logo2.png" alt="">
+                    <p>Our purpose is to give the best quality product to the customer and bring them back and make them happy.
+                    </p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright &copy; 2024</p>
+        </div>
+    </div>
+
+
+    <script src="js/account.js"></script>
+    <script src="js/menuToggle.js"></script>
+    <script src="js/updateCartCount.js"></script>
+    <script src="js/backToTop.js"></script>
+    <script src="js/load.js"></script>
+
+    <script>
+        const LoginForm = document.getElementById("LoginForm");
+        const RegForm = document.getElementById("RegForm");
+        const Indicator = document.getElementById("Indicator");
+
+        function register() {
+            RegForm.style.transform = "translateX(0px)";
+            LoginForm.style.transform = "translateX(0px)";
+            Indicator.style.transform = "translateX(100px)";
+        }
+
+        function login() {
+            RegForm.style.transform = "translateX(300px)";
+            LoginForm.style.transform = "translateX(300px)";
+            Indicator.style.transform = "translateX(0px)";
+        }
+    </script>
+
+</body>
+
+</html>

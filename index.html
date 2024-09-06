@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>E-commerce PhotoSchool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body id="main-content" class="hidden">
+    <!-- header -->
+    <div class="header">
+        <div class="container">
+            <!-- navbar -->
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="/photos/logo.png" alt="" width="125px">
+                    </a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li style="position: relative;">
+                            <a href="cart.html">Cart</a>
+                            <span id="cart-count" class="cart-count">0</span>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="account.html">Account</a></li>
+                    </ul>
+                </nav>
+
+
+                <img src="photos/menu.png"  alt="" class="menu-icon" onclick="menutoggle()">
+            </div>
+            <div class="container">
+                <div class="grid">
+                    <div class="grid1 box">
+                        <h1>LIMITED OFFER!!!</h1>
+                        <h3>Up to 50% off for all products!!</h3>
+                        <a href="products.html" class="btn">Shop Now</a>
+                    </div>
+                    <div class="grid2 box">
+                        <h5>DRSL</h5>
+                    </div>
+                    <div class="grid3 box">
+                        <h5>LENS</h5>
+                    </div>
+                    <div class="grid4 box">
+                        <h5>STABILIZER</h5>
+                    </div>
+                    <div class="grid5 box">
+                        <h5>VIDEO</h5>
+                    </div>
+                    <div class="grid6 box">
+                        <h5>BAGS</h5>
+                    </div>
+                    <div class="grid7 box">
+                        <h5>ALL CATEGORIES</h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <h2 class="title">Featured Products</h2>
+
+    <div class="categories">
+        <div class="small-container">
+            <div class="row">
+                <!-- The products will dynamically be added -->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="/photos/EOSR6.jfif" alt="" class="offer-img" />
+                </div>
+                <div class="col-2">
+                    <p>Exclusively Available on PHOTOSCHOL</p>
+                    <h1>NEW EOS R6 CAMERA</h1>
+                    <small>
+                        No matter what you shoot, the EOS R6 makes you love photography again.
+                    </small>
+                    <a href="#" class="btn">Find out more &#8594;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonial">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam temporibus non sapiente nemo autem illo! Ea sunt corporis officia inventore.
+                    </p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <img src="photos/profilGuy.jpg" alt="">
+                    <h3>Jonh Joe</h3>
+                </div>
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam temporibus non sapiente nemo autem illo! Ea sunt corporis officia inventore.
+                    </p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <img src="photos/profilGirl.jpg" alt="">
+                    <h3>Victoria</h3>
+                </div>
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam temporibus non sapiente nemo autem illo! Ea sunt corporis officia inventore.
+                    </p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <img src="photos/profilGuy.jpg" alt="">
+                    <h3>Scott
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- brands -->
+    <div class="brands">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-5">
+                    <img src="photos/canon.png" alt="">
+                </div>
+                <div class="col-5">
+                    <img src="photos/nikon.jpg" alt="">
+                </div>
+                <div class="col-5">
+                    <img src="photos/sonylogojpg.jpg" alt="">
+                </div>
+                <div class="col-5">
+                    <img src="photos/leicalogo.jpg" alt="">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to top button -->
+    <button id="back-to-top">
+        <svg aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Contact Information</h3>
+                    <p>Email: company@example.com</p>
+                    <p>Phone: +123456789</p>
+                </div>
+                <div class="footer-col-2">
+                    <img src="/photos/logo2.png" alt="">
+                    <p>Our purpose is to give the best quality product to the customer and bring them back and make them happy.
+                    </p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright &copy; 2024</p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/menuToggle.js"></script>
+    <script src="js/updateCartCount.js"></script>
+    <script src="js/backToTop.js"></script>
+    <script src="js/load.js"></script>
+
+</body>
+
+</html>

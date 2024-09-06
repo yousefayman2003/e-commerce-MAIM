@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>E-commerce PhotoSchool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body id="main-content" class="hidden">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/photos/logo.png" alt="" width="125px">
+                </a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li style="position: relative;">
+                        <a href="cart.html">Cart</a>
+                        <span id="cart-count" class="cart-count">0</span>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+
+
+            <img src="photos/menu.png"  alt="" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+
+
+
+    <div class="small-container single-product">
+        <div class="row">
+          <div class="col-2">
+            <img src="" alt="" width="100%" id="ProductImg">
+
+            <div class="small-img-row">
+              <div class="small-img-col">
+                <img src="" alt="" width="100%" class="small-img" id="smallImg1">
+              </div>
+              <div class="small-img-col">
+                <img src="" alt="" width="100%" class="small-img" id="smallImg2">
+              </div>
+              <div class="small-img-col">
+                <img src="" alt="" width="100%" class="small-img" id="smallImg3">
+              </div>
+              <div class="small-img-col">
+                <img src="" alt="" width="100%" class="small-img" id="smallImg4">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-2">
+            <p id="product-category"></p>
+            <h1 id="product-name"></h1>
+            <h4 id="product-price"></h4>
+            <input type="number" value="1" min="1" id="product-quantity">
+            <a href="#" class="btn" id="add-to-cart-btn">Add to Cart</a>
+            <h3>Product Details <i class="fa fa-indent"></i></h3>
+            <br>
+            <p id="product-description"></p>
+          </div>
+        </div>
+    </div>
+
+
+
+    <button id="back-to-top">
+        <svg aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
+        </svg>
+    </button>
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Contact Information</h3>
+                    <p>Email: company@example.com</p>
+                    <p>Phone: +123456789</p>
+                </div>
+                <div class="footer-col-2">
+                    <img src="/photos/logo2.png" alt="">
+                    <p>Our purpose is to give the best quality product to the customer and bring them back and make them happy.
+                    </p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright &copy; 2024</p>
+        </div>
+    </div>
+
+    <script src="js/menuToggle.js"></script>
+    <script src="js/updateCartCount.js"></script>
+    <script src="js/backToTop.js"></script>
+    <script src="js/load.js"></script>
+
+    <script>
+        // get product from localStorage
+        let product = JSON.parse(localStorage.getItem('product'));
+
+        if (product) {
+            // Update the main product image
+            document.getElementById('ProductImg').src = product.image;
+
+            // Update small images (for this example, using the same image for simplicity)
+            document.getElementById('smallImg1').src = product.image;
+            document.getElementById('smallImg2').src = product.image;
+            document.getElementById('smallImg3').src = product.image;
+            document.getElementById('smallImg4').src = product.image;
+
+            // Update product details
+            document.getElementById('product-category').textContent = `Home / ${product.category}`;
+            document.getElementById('product-name').textContent = product.name;
+            document.getElementById('product-price').textContent = `${product.currency} ${product.price}`;
+            document.getElementById('product-description').textContent = product.description;
+
+            // Handle Add to Cart button
+            document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+                // Get selected size and quantity
+                const quantity = document.getElementById('product-quantity').value;
+
+                product = {...product, quantity: quantity};
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                // check if product is already in cart
+                if (cart.some(p => p.id === product.id)) {
+                    alert(`${product.name} is already in your cart!`);
+                    return;
+                }
+                cart.push(product);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                location.reload();
+                alert(`${quantity} x ${product.name} added to cart`);
+            });
+        } else {
+        console.error('Product data not found in localStorage');
+        }
+
+    </script>
+
+
+</body>
+
+</html>
