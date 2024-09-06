@@ -6,6 +6,18 @@ document.getElementById("RegForm").addEventListener("submit", function (event) {
   const email = document.getElementById("regEmail").value;
   const password = document.getElementById("regPassword").value;
 
+  if (!username) {
+    alert("Please enter a username.");
+    return;
+  }
+  if (!email) {
+    alert("Please enter your email address.");
+    return;
+  }
+  if (!password) {
+    alert("Please enter your password.");
+    return;
+  }
   // Store user data in localStorage
   const userData = { username, email, password };
   localStorage.setItem(username, JSON.stringify(userData));
